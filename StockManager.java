@@ -113,21 +113,21 @@ public Product findProduct(String name)
      */
     public void addProduct(Product item)
     {
-       //if(findProduct(item.getID() == id)){
+        boolean found = false;
+        
+        for(Product checkID: stock){
+            if(checkID.getID() == item.getID()){
+                found =true;
+            }
+        }
+        
+       if(found){
+           System.out.println("Sorry, but ID is already created");
+        }else{
             stock.add(item);
-      //  }
-
+ 
+        }
     }
-
-    
-    // old version
-    
-    // public void addProduct(Product item)
-    // {
-        // stock.add(item);
-    // }
-    
-
 
     /**
      * Print details of all the products.
